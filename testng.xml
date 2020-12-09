@@ -1,0 +1,51 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Default suite" thread-count="2" parallel="false" >
+    <listeners>
+        <listener class-name="TestListener" />
+        <listener class-name="AnnotationTransformer" />
+
+    </listeners>
+
+    <test name="LandingBeforeLgnT" skipfailedinvocationcounts="false" enabled="false">
+
+        <classes>
+          <class name="tests.LandingBeforeLgnT" />
+
+        </classes>
+    </test>
+
+    <test name="Login Page" skipfailedinvocationcounts="false" enabled="false">
+        <classes>
+            <class name="tests.LoginPageT"/>
+        </classes>
+    </test>
+
+    <test name="Finja Business Upgrade" skipfailedinvocationcounts="false" enabled="true">
+        <groups>
+            <run>
+                <include name = "Functionality" />
+<!--                <include name = "Ui" />-->
+            </run>
+        </groups>
+        <classes>
+            <!--      This is not completed      <class name="tests.AddPartialLeaveT"/>-->
+
+
+
+<!--            <class name="tests.LoginPageT"/>-->
+                        <class name="tests.AttendanceBulkUploadT"/>
+                            <class name="tests.AddVendorT"/>
+                        <class name="tests.AddLeavesT"/>
+           <class name="tests.AppFrLevT"/>
+           <class name="tests.EmployeeBulkUploadT"/>
+           <class name="tests.AddEmployeeT"/>
+
+
+          <class name="tests.AutoGenerateT"/>
+            <class name="tests.PaymentBulkUploadT"/>
+
+        </classes>
+    </test>
+
+
+</suite>
